@@ -1,0 +1,7 @@
+AMAZON.StartOverIntent open
+AMAZON.StartOverIntent hello
+AMAZON.StartOverIntent hi
+AMAZON.StartOverIntent new
+AMAZON.StopIntent turnoff
+GetWorkoutIntent workout {Food}
+GetWeightIntent body weight {Weight}
