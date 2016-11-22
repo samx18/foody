@@ -4,4 +4,9 @@ AMAZON.StartOverIntent hi
 AMAZON.StartOverIntent new
 AMAZON.StopIntent turnoff
 GetWorkoutIntent workout {Food}
-GetWeightIntent body weight {Weight}
+GetWorkoutIntent nutrition {Food}
+GetWorkoutIntent {Food}
+GetWorkoutIntent Tell me about {Food}
+GetWorkoutIntent get information about {Food}
+GetWorkoutIntent information about {Food}
+GetWorkoutIntent workout for {Food}

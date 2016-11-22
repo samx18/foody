@@ -63,9 +63,7 @@ function handleSessionEndRequest(callback) {
     const cardTitle = 'Session Ended';
     const speechOutput = speech.bye;
     const cardOutput = speech.bye;
-    // Setting this to true ends the session and exits the skill.
     const shouldEndSession = true;
-
     callback({}, buildSpeechletResponse(cardTitle, speechOutput, null, shouldEndSession,cardOutput));
 }
 
@@ -96,13 +94,14 @@ function getWorkoutDetails(intent, session, callback) {
             sugar = parseInt(sugar);
             fiber = parseInt(fiber);
             cardOutput = getAdditionalNutrition(protein,fat,sugar,fiber);
-            console.log(cardOutput);
-            console.log("Protein: " + protein + " Fat: " + fat+" Sugar: "+sugar+" Fiber: "+fiber);
+            console.log(cardOutput); // debug
+            console.log("Protein: " + protein + " Fat: " + fat+" Sugar: "+sugar+" Fiber: "+fiber); // debug
             var walkTime = Math.trunc(calories*walkMin);
             var runTime = Math.trunc(calories*runMin);
             var bikeTime = Math.trunc(calories*bikeMin);
             console.log('walkTime: '+walkTime);
-            speechOutput = `There are approximatey, ${calories} calories in a serving of ${foodName}. To burn that, You need to walk ${walkTime} mins, bike ${bikeTime} mins or run ${runTime} mins`;
+            speechOutput = `There are approximatey ${calories} calories in a serving of ${foodName}.`+ 
+            `To burn that, You need to walk ${walkTime} minutes, bike ${bikeTime} minutes or run ${runTime} minutes`;
             callback(sessionAttributes,
                  buildSpeechletResponse(cardTitle, speechOutput, repromptText, shouldEndSession,cardOutput));
         }
@@ -110,14 +109,12 @@ function getWorkoutDetails(intent, session, callback) {
 }
 
 function getNDBNO(foodName,callback) {
-    console.log("Value of foodName inside getNDBNO : "+foodName);
     request.get(apiNDBNO1+foodName+apiNDBNO2+apiKey, function(err,res,body){
     if (!err && res.statusCode == 200) {
-      //console.log(apiNDBNO1+food+apiNDBNO2);
       var info = JSON.parse(body);
       try{
         var foodID = info.list.item[0].ndbno;
-        console.log(foodID);
+        console.log(foodID); // debug info
         callback(foodID);
         return;
       }catch(err){

@@ -1,11 +1,11 @@
 {
-	"greet": "Welcome to Foody, I can help with your workouts, Please tell me a food name to start.",
+	"greet": "Welcome to Foody, I can provide some intersting nutrition information about food. Please tell me a food name to start.",
 	"notfound": "Sorry, I'm not able to get the nutrition details for that food item.",
 	"bye": "Thank you for trying foody. Have a nice day!",
-	"repormpt": "Please tell me a food by saying, my favorite food is bread",
+	"repormpt": "Please tell me a food by saying, nutrition food name or workout food name",
 	"sugar": "Be careful, this is a high sugar food, eat sparingly",
 	"fiber": "The food is rich in fiber, eat this often",
-	"protein": "The food provides a good source of proten, eat moderately",
+	"protein": "The food provides a good source of protein, eat moderately",
 	"fat": "There is a high fat content in this food, be mindful.",
 	"workout": "`There are approximatey, ${calories} in a serving of ${foodName}. To burn that, You need to walk ${walkTime} mins, bike ${bikeTime} mins or run ${runTime} mins`"
 }

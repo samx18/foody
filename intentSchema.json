@@ -10,15 +10,6 @@
         ]
 	    },
 	    {
-	      "intent": "GetWeightIntent",
-        "slots": [
-          {
-	          "name": "Weight",
-	          "type": "WEIGHT_LBS"
-	        }
-        ]
-	    },
-	    {
 	      "intent": "AMAZON.StartOverIntent"
 	    },
 	    {
