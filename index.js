@@ -18,7 +18,7 @@ function buildSpeechletResponse(title, output, repromptText, shouldEndSession,ca
         },
         card: {
             type: 'Simple',
-            title: `SessionSpeechlet - ${title}`,
+            title: title,
             content: cardOutput,
         },
         reprompt: {
@@ -69,7 +69,7 @@ function handleSessionEndRequest(callback) {
 
 
 function getWorkoutDetails(intent, session, callback) {
-    const cardTitle = intent.name;
+    const cardTitle = "Additional Nutrition Information";
     const foodName = intent.slots.Food.value;
     var bodyWeight;
     let repromptText = '';
