@@ -7,5 +7,6 @@
 	"fiber": "The food is rich in fiber, eat this often",
 	"protein": "The food provides a good source of protein, eat moderately",
 	"fat": "There is a high fat content in this food, be mindful.",
+	"neutral": "This is a neutral food item. Consume it moderately.",
 	"workout": "`There are approximatey, ${calories} in a serving of ${foodName}. To burn that, You need to walk ${walkTime} mins, bike ${bikeTime} mins or run ${runTime} mins`"
 }

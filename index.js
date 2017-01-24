@@ -74,7 +74,7 @@ function getWorkoutDetails(intent, session, callback) {
     var bodyWeight;
     let repromptText = '';
     let sessionAttributes = {};
-    const shouldEndSession = false;
+    let shouldEndSession = false;
     let speechOutput = '';
     let cardOutput = '';
     const walkMin = 0.27;
@@ -102,6 +102,7 @@ function getWorkoutDetails(intent, session, callback) {
             console.log('walkTime: '+walkTime);
             speechOutput = `There are approximatey ${calories} calories in a serving of ${foodName}.`+ 
             `To burn that, You need to walk ${walkTime} minutes, bike ${bikeTime} minutes or run ${runTime} minutes`;
+            shouldEndSession = true;
             callback(sessionAttributes,
                  buildSpeechletResponse(cardTitle, speechOutput, repromptText, shouldEndSession,cardOutput));
         }
@@ -145,6 +146,8 @@ function getAdditionalNutrition(protein,fat,sugar,fiber){
     } else if (fiber > 5){
         console.log("High fiber food");
         return speech.fiber;
+    } else{
+        return speech.neutral;
     }
 
 }
@@ -205,7 +208,7 @@ function onIntent(intentRequest, session, callback) {
     if (intentName === 'GetWorkoutIntent') {
         getWorkoutDetails(intent, session, callback);
         //setColorInSession(intent, session, callback);
-    } else if (intentName === 'AMAZON.HelpIntent') {
+    } else if (intentName === 'AMAZON.HelpIntent' || intentName === 'AMAZON.StartOverIntent') {
         getWelcomeResponse(callback);
     } else if (intentName === 'AMAZON.StopIntent' || intentName === 'AMAZON.CancelIntent') {
         handleSessionEndRequest(callback);
