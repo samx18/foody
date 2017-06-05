@@ -1,5 +1,5 @@
 {
-	"greet": "Welcome to Foody, I can provide some intersting nutrition information about food. Please tell me a food name to start.",
+	"greet": "Welcome to Foody, I can provide some intersting nutrition information about your favorite food. Please tell me a food name to start.",
 	"notfound": "Sorry, I'm not able to get the nutrition details for that food item.",
 	"bye": "Thank you for trying foody. Have a nice day!",
 	"repormpt": "Please tell me a food by saying, nutrition food name or workout food name",
